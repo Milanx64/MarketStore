@@ -2,23 +2,24 @@
 public class MarketStore {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		
-		Customer customer = new Customer(150);
-		Card card = new Card(customer,0,"bronze");
-		card = card.initializeDiscountRate(card);
-		calculatePurchase(card);
-		
-		Customer customerTwo = new Customer(850);
-		Card cardTwo = new Card(customerTwo,600,"silver");
-		cardTwo = cardTwo.initializeDiscountRate(cardTwo);
-		calculatePurchase(cardTwo);
-		
-		Customer customerThree = new Customer(1300);
-		Card cardThree = new Card(customerThree,1500,"gold");
-		cardThree = cardThree.initializeDiscountRate(cardThree);
-		calculatePurchase(cardThree);
-
+		try {
+			Customer customer = new Customer(150);
+			Card card = new Card(customer,0,"bronze");
+			card = card.initializeDiscountRate(card);
+			calculatePurchase(card);
+			
+			Customer customerTwo = new Customer(850);
+			Card cardTwo = new Card(customerTwo,600,"silver");
+			cardTwo = cardTwo.initializeDiscountRate(cardTwo);
+			calculatePurchase(cardTwo);
+			
+			Customer customerThree = new Customer(1300);
+			Card cardThree = new Card(customerThree,1500,"gold");
+			cardThree = cardThree.initializeDiscountRate(cardThree);
+			calculatePurchase(cardThree);
+		} catch (Exception e) {
+			System.out.println("Something went wrong");
+		}
 	}
 	
 	public static void calculatePurchase(Card card) {
