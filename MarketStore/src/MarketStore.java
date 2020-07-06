@@ -7,21 +7,21 @@ public class MarketStore {
 		Customer customer = new Customer(150);
 		Card card = new Card(customer,0,"bronze");
 		card = card.initializeDiscountRate(card);
-		calculatePerchs(card);
+		calculatePurchase(card);
 		
 		Customer customerTwo = new Customer(850);
 		Card cardTwo = new Card(customerTwo,600,"silver");
 		cardTwo = cardTwo.initializeDiscountRate(cardTwo);
-		calculatePerchs(cardTwo);
+		calculatePurchase(cardTwo);
 		
 		Customer customerThree = new Customer(1300);
 		Card cardThree = new Card(customerThree,1500,"gold");
 		cardThree = cardThree.initializeDiscountRate(cardThree);
-		calculatePerchs(cardThree);
+		calculatePurchase(cardThree);
 
 	}
 	
-	public static void calculatePerchs(Card card) {
+	public static void calculatePurchase(Card card) {
 		double discount = card.getCustomer().getValueOfPurchase() * (card.getDiscountRate()/100);
 		double total = card.getCustomer().getValueOfPurchase() - discount;
 		
